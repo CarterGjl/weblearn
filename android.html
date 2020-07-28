@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function clickButton() {
+            window.android.goToLogin();
+        }
+
+        function showVideo() {
+            navigator.getUserMedia({
+                video: true,
+                audio: true
+            }, stream => {
+                let video = document.getElementById("video");
+                video.srcObject = stream;
+                video.onloadedmetadata = function(e) {
+                    video.play();
+                }
+            }, error => {
+                console.log(error);
+            })
+        }
+    </script>
+    <button type="button" onclick="clickButton()">点击这里</button>
+    <button type="button" onclick="showVideo()">showVideo</button>
+    <video id="video" style="transform: rotateY(180deg);" width="250"></video>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const result = async function() {
+                const fit = await first();
+                console.log("123" + fit);
+                alert("result" + fit);
+                return fit;
+            }
+            // console.log("34" + await result);
+
+        const s = result();
+        s.then((date) => {
+            console.log(date);
+        });
+        console.log("result" + s);
+        async function first() {
+            setTimeout()
+            return "test";
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

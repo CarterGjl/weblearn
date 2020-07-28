@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Vue extends EventTarget {
+            constructor(options) {
+                    this.options = options;
+                    this.$el = document.querySelector(options.$el);
+                    //数据双向绑定
+                    this.data = this.observerData(options.data);
+                    //数据模板
+                    this.compileTemplate(this.$el);
+                }
+                // 双向绑定
+            observerData(data) {
+                const _this = this;
+                return new Proxy(data, {
+                    set: function(target, prop, newValue) {
+                        // 创建 set 属性事件
+                        const event = new CustomEvent(prop, {
+                            detail: newValue
+                        });
+                        // 广播该 set 属性事件
+                        _this.dispatchEvent(event);
+
+                        return Reflect.set(...arguments);
+                    },
+                });
+            }
+
+            compileTemplate(node) {
+                const children = node.childNodes;
+                children.forEach(element => {
+                    if (element.noteType === 3) {
+                        //text 文本节点
+                        //正则匹配 {{}} 特定的绑定值
+                        const regexp = '/\{\{\s*([^\s\{\}]+)\s*\}\}/gi'
+                        const textContent = element.textContent;
+                        if (textContent.match(regexp)) {
+                            const prop = RegExp.$1;
+                            element.textContent = textContent.replace(regexp, this.data(prop));
+                            //节点点击事件
+                            //用于接收属性 set 后的事件响应
+                            this.addEventListener(prop, function(event) {
+                                element.textContent = textContent.replace(regexp, event.detail)
+                            }, false)
+                        }
+                    } else if (element.noteType === 1) {
+                        // node 元素节点
+                        this.compileTemplate(it);
+                        // check v-model
+                        const attrs = it.attributes;
+
+                        if (attrs.hasOwnProperty("v-model")) {
+                            const _this = this;
+                            const prop = attrs["v-model"].nodeValue;
+                            it.value = this.data[prop];
+                            // 监听输入 change
+                            it.addEventListener(
+                                "input",
+                                function(event) {
+                                    // TODO 入口需要做XSS校验
+                                    _this.data[prop] = event.target.value;
+                                },
+                                false
+                            );
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function acb(id) {
+            console.log("asdfas");
+            id.innerHTML = "Ooops!";
+        }
+
+        function changetext(id) {
+            id.innerHTML = "Ooops!";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="d2">
+            <form>
+                <input type="search" name="email">
+                <button onclick="click()">Send</button>
+            </form>
+        </div>
+        <div class="d1">acb</div>
+
+
+        <h1 onclick="acb(this)">click</div>
+    </div>
+    <style>
+        .d1 {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            background-color: blue;
+            text-align: center;
+        }
+        
+        .d2 {
+            background-color: red;
+            justify-content: flex-end;
+        }
+        
+        .main {
+            display: flex;
+            position: relative;
+            margin: auto;
+            width: 1000px;
+        }
+        
+        input {
+            border: none;
+            width: 10rem;
+            padding: .6rem 1rem;
+            box-shadow: none;
+            outline: none;
+            font-size: 1.1rem;
+            color: #666;
+            background-color: transparent;
+        }
+        
+        form {
+            border: 1px solid hsla(0, 0%, 59.2%, 2);
+            background-color: rgba(227, 231, 236, 2);
+            display: flex;
+            align-items: center;
+            border-radius: 2px;
+            flex-basis: auto;
+            justify-content: space-between;
+            padding: 8px;
+            display: flex;
+        }
+    </style>
+
+</body>
+
+</html>

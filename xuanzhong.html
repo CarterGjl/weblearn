@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="transparent_block" id="default">
+        <img class="transparent" src="http://pic.616pic.com/ys_img/00/66/73/cTnkWv7ZqX.jpg" />
+    </div>
+    <style>
+        img.transparent {
+            width: 200px;
+            height: 200px;
+            margin: auto 5px;
+        }
+        
+        #default {
+            color: red url(./static/admin/img/icon-success.png) no-repeat center center;
+        }
+        
+        #default img.transparent {
+            filter: alpha(opacity=30);
+            moz-opacity: .30;
+            opacity: .30;
+        }
+    </style>
+</body>
+
+</html>

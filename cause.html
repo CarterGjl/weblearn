@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let template = "我是模板{{name}},年龄{{age}},性别{{sex}}";
+        // let data = {
+        //     name: "姓名",
+        //     age: 18
+        // };
+
+        // function render(id, it) {
+        //     // 获取模板字符串
+        //     let html = $(`#${id}`).html()
+        //         // 把换行符替换为空 把{{替换为xx 把{{=替换为xx 把}}替换为xx
+        //     html = html.replace(/\n/g, '').replace(/{{(?!=)/g, '\';').replace(/{{=/g, '\'+').replace(/}}/g, ';str+=\'')
+        //         // 进行简单的拼接，通过eval执行
+        //     return eval(`let str='';str+='${html}'`)
+        // }
+        // render(template, data);
+        console.log(1);
+        setTimeout(() => {
+            console.log(2);
+            new Promise((resolve, reject) => {
+                console.log(3);
+                resolve();
+            }).then(res => {
+                console.log(4);
+            })
+        })
+        new Promise((resolve, reject) => {
+                console.log(5);
+                resolve();
+            })
+            .then(res => {
+                console.log(6);
+            })
+        new Promise((resolve, reject) => {
+                console.log(7);
+                resolve();
+            })
+            .then(res => {
+                console.log(8);
+            }).then(res => {
+                console.log(9);
+            })
+        setTimeout(() => {
+            console.log(10);
+            new Promise((resolve, reject) => {
+                console.log(11);
+                resolve();
+            }).then(res => {
+                console.log(12);
+            })
+        })
+        console.log(13);
+    </script>
+</body>
+
+</html>

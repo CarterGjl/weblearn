@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <h1>count: {{ times }}</h1>
+    </div>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+                el: '#main',
+                data: {
+                    times: 1,
+                },
+                created() {
+                    setInterval(function() {
+                        // alert('1')
+                        console.log(this);
+
+                        this.times++;
+                    }, 1000)
+                    var me = this;
+                    setInterval(() => {
+                        console.log(this);
+
+                        this.times++;
+                    }, 1000);
+                },
+                methods: {
+                    // details: function() {
+                    //     return this.site + " - 学的不仅是技术，更是梦想！";
+                    // }
+                }
+            })
+            // let vm = new Vue({
+            //     el: '#main',
+            //     data: {
+            //         times: '1'
+            //     },
+            //     created() {
+            //         // var me = this;
+            //         // setInterval(() => {
+            //         //     me.times++;
+            //         // }, 1000);
+            //     }
+            // });
+        console.log(navigator.appCodeName);
+        console.log(navigator.appName);
+        console.log(navigator.appVersion);
+        console.log(navigator.platform);
+        console.log(navigator.cookieEnabled);
+        console.log(navigator.userAgent);
+    </script>
+    <!-- <div id="vue_det">
+        <h1>site : {{site}}</h1>
+        <h1>url : {{url}}</h1>
+        <h1>{{details()}}</h1>
+    </div> -->
+    <!-- <script type="text/javascript">
+        var vm = new Vue({
+            el: '#vue_det',
+            data: {
+                site: "菜鸟教程",
+                url: "www.runoob.com",
+                alexa: "10000"
+            },
+            methods: {
+                details: function() {
+                    return this.site + " - 学的不仅是技术，更是梦想！";
+                }
+            }
+        })
+    </script> -->
+</body>
+
+</html>

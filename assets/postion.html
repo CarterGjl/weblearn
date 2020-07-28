@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-32x32.png">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <!-- <script src="../Persion.js"></script> -->
+    <script src="../assets/student.js"></script>
+    <title>Postion</title>
+</head>
+
+<body>
+    <div>
+        some text
+        <p>some more text.</p>
+    </div>
+    <script>
+        console.log('debug');
+        let add = (function() {
+            let counter = 0;
+            return function() {
+
+                console.log('test');
+
+                return counter += 1;
+            }
+        })()
+
+        console.log(typeof(add));
+
+        console.log(add());
+
+        console.log(add());
+        console.log(add());
+        // (function add(val1,val2) {
+        //     return a + b;
+        // })(3,4)
+        let res = (function add(val1, val2) {
+            return val1 + val2;
+        })(3, 4)
+        console.log(res);
+        // let person = new Person('carter', 18);
+        // person.tell();
+        let student = new Student('carter', 18);
+        student.tell();
+    </script>
+</body>
+
+</html>

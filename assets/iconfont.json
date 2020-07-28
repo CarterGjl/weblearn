@@ -1,0 +1,44 @@
+{
+  "id": "1726596",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2341972",
+      "name": "chat",
+      "font_class": "chat",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "5394491",
+      "name": "contact",
+      "font_class": "contact",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "6345257",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "11372783",
+      "name": "影院",
+      "font_class": "yingyuan",
+      "unicode": "e8c7",
+      "unicode_decimal": 59591
+    },
+    {
+      "icon_id": "6875117",
+      "name": "电影",
+      "font_class": "dianying",
+      "unicode": "e717",
+      "unicode_decimal": 59159
+    }
+  ]
+}

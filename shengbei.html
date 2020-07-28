@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        aside {
+            width: 50px;
+            background: #ccc;
+        }
+        
+        main {
+            flex-grow: 1;
+            background: #def;
+        }
+        
+        nav {
+            width: 80px;
+            background: #ccc;
+            order: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- 放在前面可以先加载内容 -->
+        <main>main</main>
+        <aside>
+            aside
+        </aside>
+        <nav>nav</nav>
+
+    </div>
+</body>
+
+</html>

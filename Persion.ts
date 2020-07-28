@@ -1,0 +1,12 @@
+export default class Person {
+    public name:string;
+    age:number;
+    constructor(name:string,age:number) {
+        this.name = name;
+        this.age = age;
+    }
+    tell(){
+        console.log(this.name+this.age);
+        
+    }
+}
